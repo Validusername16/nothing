@@ -1,8 +1,11 @@
 "use strict"
 import DieRoller from "./Dice.js";
+import DeckOfCards from "./DeckOfCards.js";
 //Object creation
+let cardDrawer = document.getElementById("drawCard");
+let debug = document.getElementById("debug");
 let dice = new DieRoller();
-
+let deck = new DeckOfCards();
 let dies = {
     d4: 4,
     d6: 6,
@@ -13,4 +16,10 @@ let dies = {
     d100: 100
 }
 
-alert(dice.roll(dies.d6,9999,0));
+
+cardDrawer.addEventListener("click", () => {
+    let card = deck.drawCard();
+    alert("You drew a "+deck.getCardType(card)+" of "+deck.getSuit(card)+ "!");
+    debug.innerHTML = deck.debug();
+});
+
