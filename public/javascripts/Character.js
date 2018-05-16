@@ -34,4 +34,12 @@ export default class Character {
     rollD20(number) {
         return dice.roll(dies.d20,number,this.ul);
     }
+
+    attack(bonusChip) {
+        if(bonusChip) {
+            return dice.roll(dies.d20,2,this.ep);
+        } else {
+
+        }
+    }
 }

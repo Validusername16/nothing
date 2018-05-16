@@ -19,6 +19,11 @@ let dies = {
 
 cardDrawer.addEventListener("click", () => {
     let card = deck.drawCard();
+
+    if(deck.getCardType(card) == "Joker") {
+        deck.shuffle();
+
+    }
     alert("You drew a "+deck.getCardType(card)+" of "+deck.getSuit(card)+ "!");
     debug.innerHTML = deck.debug();
 });
