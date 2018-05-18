@@ -1,5 +1,7 @@
 "use strict";
 import DieRoller from './Dice.js';
+import EnemyHandler from "./EnemyHandler.js";
+let enemyHandler = new EnemyHandler();
 let dice = new DieRoller();
 let dies = {
     d4: 4,
@@ -36,10 +38,10 @@ export default class Character {
     }
 
     attack(bonusChip) {
-        if(bonusChip) {
-            return dice.roll(dies.d20,2,this.ep);
-        } else {
+        return enemyHandler.testForKill(dice.roll(dies.d20,bonusChip?2:1,this.ep));
+    }
 
-        }
+    createEnemy(target) {
+        enemyHandler.createEnemy(target);
     }
 }
