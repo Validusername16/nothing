@@ -6,6 +6,10 @@ import Character from "./Character.js";
 //Object creation
 let cardDrawer = document.getElementById("drawCard");
 let debug = document.getElementById("debug");
+let hpDisplay = document.getElementById("hp");
+let addHP = document.getElementById("addHealth");
+let subHP = document.getElementById("subHealth");
+let cardOutput = document.getElementById("cardOutput");
 let enemyHandler = new EnemyHandler();
 let testPlayer = new Character("steve","meme","THIS IS NEVER USED",99,99,999,99,99,9,9,9,9,9);
 let dice = new DieRoller();
@@ -21,6 +25,7 @@ let dies = {
 };
 
 let health = 10;
+hpDisplay.innerHTML = health;
 
 
 cardDrawer.addEventListener("click", () => {
@@ -30,11 +35,25 @@ cardDrawer.addEventListener("click", () => {
         deck.shuffle();
 
     }
-    alert("You drew a "+deck.getCardType(card)+" of "+deck.getSuit(card)+ "!");
-    debug.innerHTML = deck.debug();
-    testPlayer.createEnemy(20);
-    testPlayer.attack(false)?alert("Kill"):alert("No kill");
+    //alert("You drew a "+deck.getCardType(card)+" of "+deck.getSuit(card)+ "!");
+    //debug.innerHTML = deck.debug();
+    //testPlayer.createEnemy(20);
+    //testPlayer.attack(false)?alert("Kill"):alert("No kill");
+    if(deck.getCardType(card) != "Joker") {
+        cardOutput.innerHTML = deck.getCardType(card) + " of " + deck.getSuit(card);
 
-
+    }
 });
+
+
+addHP.addEventListener('click',() =>{
+    health++;
+    hpDisplay.innerHTML = health;
+});
+
+subHP.addEventListener('click',() =>{
+    health--;
+    hpDisplay.innerHTML = health;
+});
+
 

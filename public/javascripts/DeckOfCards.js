@@ -49,11 +49,11 @@ export default class DeckOfCards{
 
     getCardType(card) {
         let cardType;
-        if(card[0] == specialCards.Ace) cardType = "1";
-        else if(card[0] == specialCards.Jack) cardType = "11";
-        else if(card[0] == specialCards.Queen) cardType = "12";
-        else if(card[0] == specialCards.King) cardType = "13";
-        else if(card[0] == specialCards.Joker) cardType = "14";
+        if(card[0] == specialCards.Ace) cardType = "Ace";
+        else if(card[0] == specialCards.Jack) cardType = "Jack";
+        else if(card[0] == specialCards.Queen) cardType = "Queen";
+        else if(card[0] == specialCards.King) cardType = "King";
+        else if(card[0] == specialCards.Joker) cardType = "Joker";
         else if(card[0] == specialCards.Ten) cardType = "10";
         else cardType = card[0];
         return cardType;

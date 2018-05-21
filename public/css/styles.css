@@ -1,4 +1,23 @@
 .button {
-  font-size: 2em; }
+  font-size: 5em; }
+
+#hp {
+  font-size: 5em; }
+
+#cardOutput {
+  position: relative;
+  left: 4em;
+  top: -5em;
+  width: 3.65em;
+  height: 5em;
+  border-radius: 5%;
+  font-size: 3.5em;
+  border: 10px solid black;
+  padding: 5%; }
+
+#cards {
+  margin-top: 5%;
+  width: 15em;
+  height: 5.5em; }
 
 /*# sourceMappingURL=styles.css.map */
