@@ -5,15 +5,17 @@
   font-size: 5em;
 }
 
+
 #cardOutput{
   position: relative;
-  left: 4em;
-  top: -5em;
-  width: 3.65em;
-  height: 5em;
+  left: 5.25em;
+  top: -7.25em;
+  width: 5.35em;
+  height: 7.25em;
   border-radius: 5%;
-  font-size:3.5em;
+  font-size:2.75em;
   border: 10px solid black;
+  text-align: center;
   padding: 5%;
 }
 
@@ -21,4 +23,10 @@
   margin-top: 5%;
   width: 15em;
   height:5.5em;
+}
+
+#health-controls{
+  overflow: hidden;
+  width: 500px;
+  height: 200px;
 }

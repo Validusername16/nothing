@@ -39,10 +39,12 @@ cardDrawer.addEventListener("click", () => {
     //debug.innerHTML = deck.debug();
     //testPlayer.createEnemy(20);
     //testPlayer.attack(false)?alert("Kill"):alert("No kill");
-    if(deck.getCardType(card) != "Joker") {
+    if(deck.getCardType(card) != "Joker")
         cardOutput.innerHTML = deck.getCardType(card) + " of " + deck.getSuit(card);
-
+    else {
+        cardOutput.innerHTML = deck.getSuit(card) + " " + deck.getCardType(card);
     }
+
 });
 
 
