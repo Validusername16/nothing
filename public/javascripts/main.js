@@ -10,8 +10,10 @@ let hpDisplay = document.getElementById("hp");
 let addHP = document.getElementById("addHealth");
 let subHP = document.getElementById("subHealth");
 let cardOutput = document.getElementById("cardOutput");
+let targetNumber = document.getElementById("target-number");
+let target = targetNumber.value;
 let enemyHandler = new EnemyHandler();
-let testPlayer = new Character("steve","meme","THIS IS NEVER USED",99,99,999,99,99,9,9,9,9,9);
+let testPlayer = new Character();
 let dice = new DieRoller();
 let deck = new DeckOfCards();
 let dies = {
@@ -27,6 +29,10 @@ let dies = {
 let health = 10;
 hpDisplay.innerHTML = health;
 
+targetNumber.addEventListener('change', () =>{
+    target = targetNumber.value;
+    testPlayer.createEnemy(target);
+});
 
 cardDrawer.addEventListener("click", () => {
     let card = deck.drawCard();
@@ -39,9 +45,10 @@ cardDrawer.addEventListener("click", () => {
     //debug.innerHTML = deck.debug();
     //testPlayer.createEnemy(20);
     //testPlayer.attack(false)?alert("Kill"):alert("No kill");
-    if(deck.getCardType(card) != "Joker")
+    if(deck.getCardType(card) != "Joker") {
         cardOutput.innerHTML = deck.getCardType(card) + " of " + deck.getSuit(card);
-    else {
+
+    } else {
         cardOutput.innerHTML = deck.getSuit(card) + " " + deck.getCardType(card);
     }
 

@@ -2,7 +2,7 @@
   font-size: 5em; }
 
 #hp {
-  font-size: 7em; }
+  font-size: 5em; }
 
 #cardOutput {
   position: relative;
@@ -11,10 +11,10 @@
   width: 5.35em;
   height: 7.25em;
   border-radius: 5%;
-  font-size: 2.55em;
+  font-size: 2.75em;
   border: 10px solid black;
   text-align: center;
-  padding: 5%; }
+  padding: 2%; }
 
 #cards {
   margin-top: 5%;
@@ -22,8 +22,28 @@
   height: 5.5em; }
 
 #health-controls {
-  display: inline;
+  overflow: visible;
   width: 500px;
   height: 200px; }
+
+.success {
+  position: relative;
+  top: -8em;
+  left: 5em; }
+
+.alert {
+  position: relative;
+  top: -3.3em; }
+
+#hp {
+  position: relative;
+  left: 3.1em;
+  top: -5.5em; }
+
+#target-number {
+  font-size: 3em;
+  width: 400px;
+  position: relative;
+  top: -4em; }
 
 /*# sourceMappingURL=styles.css.map */
