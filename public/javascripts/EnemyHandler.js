@@ -1,16 +1,16 @@
 "use strict";
-
+    var target = 0;
 export default class EnemyHandler {
     constructor() {
 
     }
 
     createEnemy(targetNumber) {
-        this.targetNumber = targetNumber;
+        target = targetNumber;
     }
 
     testForKill(roll) {
-        if(roll > this.targetNumber) return true;
+        if(roll > target) return true;
         else return false;
     }
 }

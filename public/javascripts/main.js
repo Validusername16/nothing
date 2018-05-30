@@ -11,6 +11,7 @@ let addHP = document.getElementById("addHealth");
 let subHP = document.getElementById("subHealth");
 let cardOutput = document.getElementById("cardOutput");
 let targetNumber = document.getElementById("target-number");
+let attackButton = document.getElementById("attack");
 let target = targetNumber.value;
 let enemyHandler = new EnemyHandler();
 let testPlayer = new Character();
@@ -31,8 +32,18 @@ hpDisplay.innerHTML = health;
 
 targetNumber.addEventListener('change', () =>{
     target = targetNumber.value;
-    testPlayer.createEnemy(target);
+    enemyHandler.createEnemy(target);
+    //alert("test");
 });
+
+attackButton.addEventListener('click', () =>{
+    if(enemyHandler.testForKill(dice.roll(dies.d20,1,1))) {
+        alert("You successfully killed the enemy");
+    } else {
+        alert("You were unable to kill the enemy");
+    }
+});
+
 
 cardDrawer.addEventListener("click", () => {
     let card = deck.drawCard();
@@ -56,12 +67,12 @@ cardDrawer.addEventListener("click", () => {
 
 
 addHP.addEventListener('click',() =>{
-    health++;
+    if(health < 10) health++;
     hpDisplay.innerHTML = health;
 });
 
 subHP.addEventListener('click',() =>{
-    health--;
+    if(health > 0) health--;
     hpDisplay.innerHTML = health;
 });
 
