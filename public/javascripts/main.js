@@ -12,6 +12,9 @@ let subHP = document.getElementById("subHealth");
 let cardOutput = document.getElementById("cardOutput");
 let targetNumber = document.getElementById("target-number");
 let attackButton = document.getElementById("attack");
+let checkbox = document.getElementById("traitBonus");
+let specialDice = document.getElementsByTagName('select');
+let submit = document.getElementById('roll');
 let target = targetNumber.value;
 let enemyHandler = new EnemyHandler();
 let testPlayer = new Character();
@@ -36,11 +39,25 @@ targetNumber.addEventListener('change', () =>{
     //alert("test");
 });
 
+submit.addEventListener('click', () =>{
+    let type = specialDice.options[specialDice.selectedIndex].value;
+    alert(type)
+    if(type = 'd4') alert(dice.roll(dies.d4,1,0));
+    if(type = 'd6') alert(dice.roll(dies.d6,1,0));
+    if(type = 'd8') alert(dice.roll(dies.d8,1,0));
+    if(type = 'd10') alert(dice.roll(dies.d10,1,0));
+    if(type = 'd12') alert(dice.roll(dies.d12,1,0));
+    if(type = 'd20') alert(dice.roll(dies.d20,1,0));
+    if(type = 'd100') alert(dice.roll(dies.d100,1,0));
+})
+
 attackButton.addEventListener('click', () =>{
-    if(enemyHandler.testForKill(dice.roll(dies.d20,1,1))) {
-        alert("You successfully killed the enemy");
+    let roll = dice.roll(dies.d20,checkbox.checked?2:1,0);
+    let kill = enemyHandler.testForKill(roll);
+    if(kill) {
+        alert("You successfully killed the enemy by rolling " + roll);
     } else {
-        alert("You were unable to kill the enemy");
+        alert("You were unable to kill the enemy due to rolling "+roll);
     }
 });
 

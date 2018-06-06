@@ -48,9 +48,35 @@
 
 #attack {
   position: relative;
-  top: -10em; }
+  top: -3em;
+  font-size: 4em; }
 
 .bonusLabel {
-  font-size: 4em; }
+  font-size: 4em;
+  position: relative;
+  left: 1em;
+  top: -3em; }
+
+#traitBonus {
+  transform: scale(5);
+  position: relative;
+  top: -12.5em;
+  left: 2.5em; }
+
+#bonuses {
+  font-size: 2em; }
+
+select {
+  width: 15em;
+  height: 3em;
+  font-size: 1em; }
+
+#roll {
+  font-size: 1.2em; }
+
+#bonuses {
+  position: relative;
+  top: -30em;
+  left: 20em; }
 
 /*# sourceMappingURL=styles.css.map */
